@@ -6,7 +6,6 @@
     <title>Traslados Pablo - Asistencia Vial 24/7</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* PALETA DE COLORES ARMONIZADA */
         * {
             margin: 0;
             padding: 0;
@@ -126,7 +125,7 @@
             color: #FFFFFF;
         }
 
-        /* Sección Galería Externa limpia */
+        /* Sección Galería */
         .gallery-section {
             padding: 60px 20px;
             max-width: 1200px;
@@ -344,7 +343,6 @@
             border-top: 1px solid #1F2937;
         }
 
-        /* Responsivo */
         @media (max-width: 768px) {
             .nav-container {
                 flex-direction: column;
@@ -387,3 +385,93 @@
                 <a href="tel:+5491133859876" class="btn btn-call">
                     <i class="fa-solid fa-phone-flip"></i> Llamar Ahora
                 </a>
+                <a href="https://wa.me/5491133859876?text=Hola,%20necesito%20un%20servicio%20de%20remolque%20urgente%20con%20Traslados%20Pablo." target="_blank" class="btn btn-whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i> WhatsApp Auxilio
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery-section">
+        <h3>Nuestra Flota y Servicios en Acción</h3>
+        <div class="grid-gallery">
+            <img src="portadapablo.jpeg" alt="Portada Traslados Pablo">
+            <img src="golblanco.jpeg" alt="Remolque Gol Blanco">
+            <img src="motouno.jpeg" alt="Asistencia Motocicleta Uno">
+            <img src="dogechocado.jpeg" alt="Remolque Auto Chocado">
+            <img src="motodos.jpeg" alt="Remolque Moto Dos">
+            <img src="paliofamiliar.jpeg" alt="Remolque Auto Familiar">
+            <img src="remolque auto negro.jpeg" alt="Remolque Auto Negro">
+            <img src="remolque peugeot.jpeg" alt="Remolque Peugeot">
+        </div>
+    </section>
+
+    <section id="servicios" class="services">
+        <h2>Nuestros Servicios</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fa-solid fa-car"></i>
+                <h3>Autos y Motos</h3>
+                <p>Traslado cuidadoso y ágil para vehículos livianos y motocicletas de cualquier cilindrada.</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-truck-monster"></i>
+                <h3>Camionetas</h3>
+                <p>Equipamiento reforzado para mover vehículos pesados y de gran tamaño de forma eficiente.</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-clock"></i>
+                <h3>+12 Años de Experiencia</h3>
+                <p>Garantizamos rapidez, profesionalismo y un trato impecable en cada emergencia con Traslados Pablo.</p>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h3>Cotiza tu Traslado a Larga Distancia</h3>
+            <p>Para viajes interurbanos o largas distancias, completa el formulario y te enviaremos un presupuesto inmediatamente.</p>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="nombre">Nombre Completo</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ej. Juan Pérez" required>
+                </div>
+                <div class="form-group">
+                    <label for="vehiculo">Tipo de Vehículo</label>
+                    <select id="vehiculo" name="vehiculo" required>
+                        <option value="">Selecciona una opción</option>
+                        <option value="moto">Motocicleta</option>
+                        <option value="auto">Auto Sedán / Hatchback</option>
+                        <option value="camioneta">Camioneta</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="origen">Lugar de Origen (Recogida)</label>
+                    <input type="text" id="origen" name="origen" placeholder="Ciudad o Dirección exacta" required>
+                </div>
+                <div class="form-group">
+                    <label for="destino">Lugar de Destino (Entrega)</label>
+                    <input type="text" id="destino" name="destino" placeholder="Ciudad o Dirección de destino" required>
+                </div>
+                <div class="form-group">
+                    <label for="detalles">Detalles Adicionales (Opcional)</label>
+                    <textarea id="detalles" name="detalles" rows="3" placeholder="¿El vehículo rueda?, ¿tiene alguna falla específica?"></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Solicitar Cotización</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="contacto" class="contact">
+        <div class="contact-info">
+            <h2>Contacto Comercial</h2>
+            <p>¿Tienes dudas o requieres servicios corporativos?</p>
+            <p><i class="fa-solid fa-envelope"></i> pablohumareda@gmail.com</p>
+            <p><i class="fa-solid fa-location-dot"></i> Cobertura Nacional las 24 Horas</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Traslados Pablo. Todos los derechos reservados. | Diseñado por Matias Sanchez</p>
+    </footer>
+
+</body>
+</html>

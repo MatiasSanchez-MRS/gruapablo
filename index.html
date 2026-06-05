@@ -125,7 +125,7 @@
             color: #FFFFFF;
         }
 
-        /* Sección Galería */
+        /* Sección Galería Inteligente */
         .gallery-section {
             padding: 60px 20px;
             max-width: 1200px;
@@ -171,6 +171,35 @@
 
         .grid-gallery img:hover {
             transform: scale(1.03);
+        }
+
+        /* Ocultar las fotos extra por defecto */
+        .grid-gallery img.foto-extra {
+            display: none;
+        }
+
+        /* Cuando la galería tiene la clase 'abierta', muestra las fotos ocultas */
+        .grid-gallery.abierta img.foto-extra {
+            display: block;
+        }
+
+        /* Botón Ver Más */
+        .btn-toggle-gallery {
+            background-color: transparent;
+            color: #111827;
+            border: 2px solid #111827;
+            padding: 12px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 35px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-toggle-gallery:hover {
+            background-color: #111827;
+            color: #FFFFFF;
         }
 
         /* Sección Servicios */
@@ -363,6 +392,7 @@
 </head>
 <body>
 
+    <!-- Navegación -->
     <header>
         <nav class="nav-container">
             <div class="logo">
@@ -376,6 +406,7 @@
         </nav>
     </header>
 
+    <!-- Sección Hero Principal -->
     <section id="inicio" class="hero">
         <div class="hero-content">
             <h1>¿Te quedaste varado? Asistencia Vial Rápida</h1>
@@ -392,20 +423,43 @@
         </div>
     </section>
 
+    <!-- Sección Galería (Muestra 4 y oculta las demás) -->
     <section class="gallery-section">
         <h3>Nuestra Flota y Servicios en Acción</h3>
-        <div class="grid-gallery">
+        
+        <div class="grid-gallery" id="galeriaGrid">
+            <!-- ESTAS 4 SE VEN SIEMPRE -->
             <img src="portadapablo.jpeg" alt="Portada Traslados Pablo">
             <img src="golblanco.jpeg" alt="Remolque Gol Blanco">
             <img src="motouno.jpeg" alt="Asistencia Motocicleta Uno">
             <img src="dogechocado.jpeg" alt="Remolque Auto Chocado">
-            <img src="motodos.jpeg" alt="Remolque Moto Dos">
-            <img src="paliofamiliar.jpeg" alt="Remolque Auto Familiar">
-            <img src="remolque auto negro.jpeg" alt="Remolque Auto Negro">
-            <img src="remolque peugeot.jpeg" alt="Remolque Peugeot">
+
+            <!-- FOTOS EXTRA (Se ocultan automáticamente y aparecen al dar click) -->
+            <img src="motodos.jpeg" class="foto-extra" alt="Remolque Moto Dos">
+            <img src="paliofamiliar.jpeg" class="foto-extra" alt="Remolque Auto Familiar">
+            <img src="remolque auto negro.jpeg" class="foto-extra" alt="Remolque Auto Negro">
+            <img src="remolque peugeot.jpeg" class="foto-extra" alt="Remolque Peugeot">
+            
+            <!-- Cambia el "src" de las siguientes fotos con los nombres reales de tus archivos nuevos -->
+            <img src="foto9.jpeg" class="foto-extra" alt="Auxilio Vial">
+            <img src="foto10.jpeg" class="foto-extra" alt="Auxilio Vial">
+            <img src="foto11.jpeg" class="foto-extra" alt="Auxilio Vial">
+            <img src="foto12.jpeg" class="foto-extra" alt="Auxilio Vial">
+            <img src="foto13.jpeg" class="foto-extra" alt="Auxilio Vial">
+            <img src="foto14.jpeg" class="foto-extra" alt="Auxilio Vial">
+            <img src="foto15.jpeg" class="foto-extra" alt="Auxilio Vial">
+            <img src="foto16.jpeg" class="foto-extra" alt="Auxilio Vial">
+            <img src="foto17.jpeg" class="foto-extra" alt="Auxilio Vial">
+            <img src="foto18.jpeg" class="foto-extra" alt="Auxilio Vial">
+            <img src="foto19.jpeg" class="foto-extra" alt="Auxilio Vial">
+            <img src="foto20.jpeg" class="foto-extra" alt="Auxilio Vial">
         </div>
+
+        <!-- Botón para expandir/colapsar -->
+        <button class="btn-toggle-gallery" id="btnGaleria">Ver más fotos</button>
     </section>
 
+    <!-- Sección Servicios -->
     <section id="servicios" class="services">
         <h2>Nuestros Servicios</h2>
         <div class="services-grid">
@@ -426,6 +480,7 @@
             </div>
         </div>
 
+        <!-- Formulario Larga Distancia -->
         <div class="form-section">
             <h3>Cotiza tu Traslado a Larga Distancia</h3>
             <p>Para viajes interurbanos o largas distancias, completa el formulario y te enviaremos un presupuesto inmediatamente.</p>
@@ -460,6 +515,7 @@
         </div>
     </section>
 
+    <!-- Sección Contacto Comercial -->
     <section id="contacto" class="contact">
         <div class="contact-info">
             <h2>Contacto Comercial</h2>
@@ -469,9 +525,30 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <p>&copy; 2026 Traslados Pablo. Todos los derechos reservados. | Diseñado por Matias Sanchez</p>
     </footer>
+
+    <!-- LÓGICA DE LA GALERÍA -->
+    <script>
+        const btnGaleria = document.getElementById('btnGaleria');
+        const galeriaGrid = document.getElementById('galeriaGrid');
+
+        btnGaleria.addEventListener('click', () => {
+            // Alterna la clase 'abierta' en la grilla de fotos
+            galeriaGrid.classList.toggle('abierta');
+            
+            // Cambia el texto del botón según corresponda
+            if (galeriaGrid.classList.contains('abierta')) {
+                btnGaleria.textContent = 'Ver menos fotos';
+            } else {
+                btnGaleria.textContent = 'Ver más fotos';
+                // Hace un scroll suave de vuelta al inicio de la galería al cerrar
+                galeriaGrid.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    </script>
 
 </body>
 </html>

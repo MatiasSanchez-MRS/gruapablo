@@ -64,11 +64,11 @@
             color: #FACC15;
         }
 
-        /* Sección Hero */
+        /* Sección Hero - CORREGIDA SIN IMÁGENES ROTAS */
         .hero {
-            background: linear-gradient(rgba(17, 24, 39, 0.95), rgba(17, 24, 39, 0.95)), url('https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+            background: linear-gradient(135deg, #0F172A 0%, #111827 100%); /* Azul marino profundo a negro premium */
             color: #FFFFFF;
-            padding: 80px 20px;
+            padding: 90px 20px;
             text-align: center;
         }
 
@@ -173,17 +173,14 @@
             transform: scale(1.03);
         }
 
-        /* Ocultar las fotos extra por defecto */
         .grid-gallery img.foto-extra {
             display: none;
         }
 
-        /* Cuando la galería tiene la clase 'abierta', muestra las fotos ocultas */
         .grid-gallery.abierta img.foto-extra {
             display: block;
         }
 
-        /* Botón Ver Más */
         .btn-toggle-gallery {
             background-color: transparent;
             color: #111827;
@@ -406,7 +403,7 @@
         </nav>
     </header>
 
-    <!-- Sección Hero Principal -->
+    <!-- Sección Hero Principal (CORREGIDA CON AZUL OSCURO DEGRADÉ) -->
     <section id="inicio" class="hero">
         <div class="hero-content">
             <h1>¿Te quedaste varado? Asistencia Vial Rápida</h1>
@@ -423,7 +420,7 @@
         </div>
     </section>
 
-    <!-- Sección Galería (Muestra 4 y oculta las demás) -->
+    <!-- Sección Galería Inteligente -->
     <section class="gallery-section">
         <h3>Nuestra Flota y Servicios en Acción</h3>
         
@@ -434,13 +431,13 @@
             <img src="motouno.jpeg" alt="Asistencia Motocicleta Uno">
             <img src="dogechocado.jpeg" alt="Remolque Auto Chocado">
 
-            <!-- FOTOS EXTRA (Se ocultan automáticamente y aparecen al dar click) -->
+            <!-- FOTOS EXTRA -->
             <img src="motodos.jpeg" class="foto-extra" alt="Remolque Moto Dos">
             <img src="paliofamiliar.jpeg" class="foto-extra" alt="Remolque Auto Familiar">
             <img src="remolque auto negro.jpeg" class="foto-extra" alt="Remolque Auto Negro">
             <img src="remolque peugeot.jpeg" class="foto-extra" alt="Remolque Peugeot">
             
-            <!-- Cambia el "src" de las siguientes fotos con los nombres reales de tus archivos nuevos -->
+            <!-- Espacios listos para las fotos nuevas de tu amigo -->
             <img src="foto9.jpeg" class="foto-extra" alt="Auxilio Vial">
             <img src="foto10.jpeg" class="foto-extra" alt="Auxilio Vial">
             <img src="foto11.jpeg" class="foto-extra" alt="Auxilio Vial">
@@ -455,7 +452,6 @@
             <img src="foto20.jpeg" class="foto-extra" alt="Auxilio Vial">
         </div>
 
-        <!-- Botón para expandir/colapsar -->
         <button class="btn-toggle-gallery" id="btnGaleria">Ver más fotos</button>
     </section>
 
@@ -536,15 +532,12 @@
         const galeriaGrid = document.getElementById('galeriaGrid');
 
         btnGaleria.addEventListener('click', () => {
-            // Alterna la clase 'abierta' en la grilla de fotos
             galeriaGrid.classList.toggle('abierta');
             
-            // Cambia el texto del botón según corresponda
             if (galeriaGrid.classList.contains('abierta')) {
                 btnGaleria.textContent = 'Ver menos fotos';
             } else {
                 btnGaleria.textContent = 'Ver más fotos';
-                // Hace un scroll suave de vuelta al inicio de la galería al cerrar
                 galeriaGrid.scrollIntoView({ behavior: 'smooth' });
             }
         });
